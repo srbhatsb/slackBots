@@ -5,12 +5,11 @@ import (
 	"strings"
 	"sync"
 
-	config "github.com/magmasystems/SlackStockSlashCommand/configuration"
+	config "github.com/srbhatsb/slackBots/SlackStockSlashCommand/configuration"
 
-	q "github.com/magmasystems/SlackStockSlashCommand/quoteproviders"
-	av "github.com/magmasystems/SlackStockSlashCommand/quoteproviders/alphavantageprovider"
-	quandl "github.com/magmasystems/SlackStockSlashCommand/quoteproviders/quandlprovider"
-	wtd "github.com/magmasystems/SlackStockSlashCommand/quoteproviders/worldtradingdata"
+	q "github.com/srbhatsb/SlackStockSlashCommand/quoteproviders"
+	av "github.com/srbhatsb/SlackStockSlashCommand/quoteproviders/alphavantageprovider"
+	 
 )
 
 // QuoteInfo - contains info about a quote
@@ -120,10 +119,6 @@ func quoteProviderFactory(providerName string, apiKey string) (provider q.QuoteP
 	switch strings.ToLower(providerName) {
 	case "alphavantage":
 		provider = av.CreateQuoteProvider(apiKey)
-	case "worldtradingdata":
-		provider = wtd.CreateQuoteProvider(apiKey)
-	case "quandl":
-		provider = quandl.CreateQuoteProvider(apiKey)
 	default:
 		return nil, errors.New("the Quote Provider cannot be found")
 	}
