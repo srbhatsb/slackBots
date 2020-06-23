@@ -7,8 +7,8 @@ import (
 
 	config "github.com/srbhatsb/slackBots/SlackStockSlashCommand/configuration"
 
-	q "github.com/srbhatsb/SlackStockSlashCommand/quoteproviders"
-	av "github.com/srbhatsb/SlackStockSlashCommand/quoteproviders/alphavantageprovider"
+	q "github.com/srbhatsb/slackBots/SlackStockSlashCommand/quoteproviders"
+	av "github.com/srbhatsb/slackBots/SlackStockSlashCommand/alphavantageprovider"
 	 
 )
 
